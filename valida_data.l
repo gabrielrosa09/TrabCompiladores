@@ -17,7 +17,7 @@
         printf("Data inválida: %s\n", yytext);
     } else if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {
         printf("Data inválida: %s\n", yytext);
-    } else if (mes == 2 && ((ano % 4 != 0 && dia > 28) || (ano % 4 == 0 && dia > 29))) {
+    } else if (mes == 2 && ((ano % 4 != 0 && dia > 28) || (ano % 4 == 0 && dia > 29) || (ano == 1900 && dia > 28))) {
         printf("Data inválida: %s\n", yytext);
     } else {
         printf("Data válida: %s\n", yytext);
