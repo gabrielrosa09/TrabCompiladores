@@ -449,8 +449,9 @@ char *yytext;
 #line 1 "valida_data.l"
 #line 2 "valida_data.l"
 #include <stdio.h>
-#line 453 "lex.yy.c"
+int contadorDatasValidas = 0;
 #line 454 "lex.yy.c"
+#line 455 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -667,10 +668,10 @@ YY_DECL
 		}
 
 	{
-#line 7 "valida_data.l"
+#line 8 "valida_data.l"
 
 
-#line 674 "lex.yy.c"
+#line 675 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -729,7 +730,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 9 "valida_data.l"
+#line 10 "valida_data.l"
 {
     // Divide a string em três partes (dia, mês e ano) usando a barra como separador
     int dia = atoi(strtok(yytext, "/"));
@@ -738,28 +739,28 @@ YY_RULE_SETUP
 
     // Verifica se a data é inválida
     if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 1900 || ano > 2023) {
-        printf("Data inválida: %s\n", yytext);
+        
     } else if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {
-        printf("Data inválida: %s\n", yytext);
-    } else if (mes == 2 && ((ano % 4 != 0 && dia > 28) || (ano % 4 == 0 && dia > 29))) {
-        printf("Data inválida: %s\n", yytext);
+        
+    } else if (mes == 2 && ((ano % 4 != 0 && dia > 28) || (ano % 4 == 0 && dia > 29) || (ano == 1900 && dia > 28))) {
+        
     } else {
-        printf("Data válida: %s\n", yytext);
+        contadorDatasValidas++;
     }
 }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 27 "valida_data.l"
+#line 28 "valida_data.l"
 {}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 29 "valida_data.l"
+#line 30 "valida_data.l"
 ECHO;
 	YY_BREAK
-#line 763 "lex.yy.c"
+#line 764 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1764,11 +1765,13 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 29 "valida_data.l"
+#line 30 "valida_data.l"
 
 
 int main() {
     // Chama o analisador léxico do Flex
     yylex();
+    printf("%d", contadorDatasValidas);
     return 0;
 }
+
