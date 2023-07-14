@@ -506,11 +506,18 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "valida_data.l"
 #line 2 "valida_data.l"
+    /* 
+        Integrantes do grupo
+        Ana Carolina Costa César - 190101750
+        Ana Caroline Campos Rocha - 190083930
+        Catlen Cleane Ferreira de Oliveira - 211031664
+        Gabriel da Silva Rosa - 202023681
+    */
 #include <stdio.h>
 #include <stdlib.h>
 int contadorDatasValidas = 0;
-#line 513 "lex.yy.c"
-#line 514 "lex.yy.c"
+#line 520 "lex.yy.c"
+#line 521 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -727,9 +734,9 @@ YY_DECL
 		}
 
 	{
-#line 21 "valida_data.l"
+#line 28 "valida_data.l"
 
-#line 733 "lex.yy.c"
+#line 740 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -788,36 +795,36 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 22 "valida_data.l"
+#line 29 "valida_data.l"
 {contadorDatasValidas++;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 23 "valida_data.l"
+#line 30 "valida_data.l"
 {contadorDatasValidas++;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 24 "valida_data.l"
+#line 31 "valida_data.l"
 {contadorDatasValidas++;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 25 "valida_data.l"
+#line 32 "valida_data.l"
 {contadorDatasValidas++;}
 	YY_BREAK
 case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
-#line 26 "valida_data.l"
+#line 33 "valida_data.l"
 {}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 27 "valida_data.l"
+#line 34 "valida_data.l"
 ECHO;
 	YY_BREAK
-#line 821 "lex.yy.c"
+#line 828 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1822,7 +1829,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 27 "valida_data.l"
+#line 34 "valida_data.l"
 
 
 int yywrap(void);

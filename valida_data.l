@@ -1,3 +1,10 @@
+    /* 
+        Integrantes do grupo
+        Ana Carolina Costa César - 190101750
+        Ana Caroline Campos Rocha - 190083930
+        Catlen Cleane Ferreira de Oliveira - 211031664
+        Gabriel da Silva Rosa - 202023681
+    */
 %{
 #include <stdio.h>
 #include <stdlib.h>
